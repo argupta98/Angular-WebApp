@@ -10,13 +10,18 @@ export class NavbarComponent implements OnInit {
   links: string[] = ['Home', 'SignUp', 'SignIn'];
   constructor() { }
   ngOnInit() {
+  }
+
+  OnClick(): void{
+    this.logged_in = !this.logged_in;
     if(this.logged_in){
       this.links = ['Logout', 'Make Wish']
     }
   }
 
 }
-interface nav_link{
+
+interface navlink{
   name: String; 
   link: String;
 }

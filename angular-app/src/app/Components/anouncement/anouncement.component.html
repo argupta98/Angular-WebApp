@@ -1,0 +1,33 @@
+
+<head>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="jumbotron">
+      <h1>Bucket List App</h1>
+      <p class="lead"></p>
+      <p>
+      <a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up</a>   
+      <a class="btn btn-lg btn-success" href="showSignIn" role="button">Sign in</a>
+      </p>
+      <h3>Users</h3>
+      <div *ngIf="selected">
+        <label>name: </label>
+        <input [(ngModel)]="selectedUser.name">
+        <label>id: </label>
+        <span>{{selectedUser.id}}</span>
+        <button (click)="selected=false">X</button>
+      </div>
+      <ul class="heroes">
+          <li *ngFor="let user of users" (click)="SelectUser(user)" [class.selected]="user===selectedUser">
+            <span class="badge">{{user.id}}</span>{{user.name}}
+          </li>
+      </ul>
+  </div>
+</body>
+  
+
